@@ -1,0 +1,48 @@
+body {
+	background-color: #eeeeee;
+}
+
+.topbar {
+	width: 100%;
+	background-color: #FFFFFF;
+	height: 40px;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	z-index: 999;
+	box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.15);
+	-webkit-app-region: drag;
+}
+
+.topbar > .item.add {
+	line-height: 40px;
+	font-family: 'SF UI Display';
+	font-weight: 700;
+	font-size: 14px;
+	letter-spacing: 0.5px;
+	user-select: none;
+	display: inline;
+    float: right;
+    position: absolute;
+    top: 0px;
+    left: 100%;
+    margin-left: -60px;
+    color: #086ADB;
+}
+
+.appLabel {
+	text-align: center; 
+	line-height: 40px;
+	font-family: 'SF UI Display';
+	font-weight: 700;
+	font-size: 14px;
+	letter-spacing: 0.5px;
+	user-select: none;
+}
+
+.contentView {
+	width: 100%;
+    position: fixed;
+    left: 0px;
+    top: 40px;
+}

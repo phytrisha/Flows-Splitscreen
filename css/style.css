@@ -1,0 +1,38 @@
+* {
+	user-select: none;
+	cursor: default;
+}
+
+.leftView {
+	background-color: #EFEFEF;
+	width: 50%;
+	height: 100%;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	border-right: 1px solid #CCCCCC;
+}
+
+.rightView {
+	background-color: #EFEFEF;
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    top: 0px;
+}
+
+.artboard {
+	position: relative;
+	background-color: #F3F3F3;
+	border: 1px solid #CCCCCC;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.artboard.iphone7 {
+	width: 375px;
+	height: 667px;
+	left: 50%;
+	top: 50%;
+	margin: -333px 0px 0px -187px;
+}
