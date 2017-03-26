@@ -1,6 +1,18 @@
+var elemCnt = 0;
+var styleCnt = 0;
+
 $(document).ready(function() {
-	// scale window elements
-	$('.leftView').css('height', window.innerHeight - 40 + 'px');
-	$('.rightView').css('height', window.innerHeight - 40 + 'px');
+	// Build Up Views
+	InitUI();
 	
+	// Template Functions show how Elements are created
+	TemplateTopbar();
+	TemplateButton();
+
+	console.log(data);
+})
+
+$(window).resize(function() {
+	// Update Views to current Size
+	UpdateUI();
 })

@@ -1,7 +1,7 @@
-// base class for all buttons
-var Button = function(name) {
+// base class for all topbars
+var Topbar = function(name) {
 
-	// Button is a child of "Element"
+	// Topbar is a child of "Element"
 	Element.call(this, elemCnt, name);
 
 	// Initiate the object and append to DOM
@@ -12,16 +12,16 @@ var Button = function(name) {
 }
 
 // Inherit the Functions of global Element class
-Button.prototype = Object.create(Element.prototype);
-Button.prototype.constructor = Button;
+Topbar.prototype = Object.create(Element.prototype);
+Topbar.prototype.constructor = Topbar;
 
 // Initiate the Topbar as an element
-Button.prototype.Create = function(obj) {
+Topbar.prototype.Create = function(obj) {
 	// Add Object to File
 	AddToFile('element', obj);
 
 	// Append to DOM
-	$('.artboard.selected').append('<div class="elem elemButton" id="e' + this.id + '"></div>');
+	$('.artboard.selected').append('<div class="elem elemTopbar" id="e' + this.id + '"></div>');
 	
 	// Return unique ID
 	return '#e' + this.id;

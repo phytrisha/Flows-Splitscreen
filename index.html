@@ -7,51 +7,19 @@
     <link rel="stylesheet" href="css/window.css">
     <link rel="stylesheet" href="css/typo.css">
     <link rel="stylesheet" href="css/elem.css">
-    <title>Design Tool</title>
-    <script>
-    	// to use jQuery and others, window.module should not exist
-    	// this renames it to window.nodeModule
-    	window.nodeModule = window.module;
-    	delete window.module;
-    </script>
+
+    <script src="lib/electronInit.js"></script>
     <script src="lib/jquery-3.1.1.min.js"></script>
-    <script src="js/menu.js"></script>
     <script src="js/colors.js"></script>
+    <script src="js/elements.js"></script>
+    <script src="js/styles.js"></script>
+    <script src="js/topbar.js"></script>
     <script src="js/button.js"></script>
+    <script src="js/screen.js"></script>
     <script src="data/file.js"></script>
+    <script src="js/template.js"></script>
     <script src="main.js"></script>
   </head>
   <body>
-    <div class="topbar" id="electron-titlebar">
-      <div class="appLabel drag">
-        flows
-      </div>
-    </div>
-
-    <div class="contentView">
-      
-      <div class="leftView">
-        
-      </div>
-
-      <div class="rightView">
-        <div class="artboard iphone7">
-          <div class="elemTopbar">
-            <div class="elemButton" id="back">
-              <div class="elemIcon" id="back"></div>
-              <p class="elemButtonLabel" id="back">Back</p>
-            </div>
-            <div class="elemLabel" id="detail">
-              <p class="elemLabelText">Detail</p>
-            </div>
-            <div class="elemButton" id="add">
-              <p class="elemButtonLabel" id="back">Add</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
   </body>
 </html>
