@@ -4,6 +4,9 @@ var data = {
 	],
 	styles: [
 
+	],
+	artboards: [
+
 	]
 }
 
@@ -16,6 +19,10 @@ function AddToFile(type, obj) {
 		case 'style':
 			data.styles.push(obj);
 			styleCnt = data.styles.length;
+			break;
+		case 'artboard':
+			data.artboards.push(obj);
+			artboardCnt = data.artboards.length;
 			break;
 		default:
 			break;

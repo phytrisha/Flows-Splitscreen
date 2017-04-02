@@ -13,8 +13,10 @@ function InitUI() {
 	$('.contentView').append('<div class="leftView"></div>');
 	$('.contentView').append('<div class="rightView"></div>');
 
+	InitCanvas();
+
 	// First Artboard, temporary?
-	$('.rightView').append('<div class="artboard iphone7 selected"></div>');
+	// $('.rightView').append('<div class="artboard iphone7 selected"></div>');
 
 	UpdateUI();
 }

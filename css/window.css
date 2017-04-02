@@ -44,6 +44,7 @@ body {
 	left: 0px;
 	top: 0px;
 	border-right: 1px solid #CCCCCC;
+	z-index: 999;
 }
 
 .rightView {
@@ -53,4 +54,5 @@ body {
     position: absolute;
     left: 50%;
     top: 0px;
+    z-index: 1;
 }
