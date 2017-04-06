@@ -9,6 +9,8 @@ var Button = function(name) {
 
 	this.children = [];
 
+	this.selected = false;
+
 }
 
 // Inherit the Functions of global Element class
@@ -25,4 +27,8 @@ Button.prototype.Create = function(obj) {
 	
 	// Return unique ID
 	return '#e' + this.id;
+}
+
+Button.prototype.Select = function() {
+	this.selected = true;
 }

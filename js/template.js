@@ -96,11 +96,5 @@ function TemplateArtboards() {
 	myArtboard.Select();
 
 	myArtboard.SetPositionValue('left', '200px');
-	myArtboard.SetPositionValue('top', '50px');
-
-	var myArtboard2 = new Artboard('myArtboard2', 'iPhone7');
-
-	// ------------TEMPORARY!!!------------
-	myArtboard2.SetPositionValue('left', '-195px');
-	myArtboard2.SetPositionValue('top', '50px');
+	myArtboard.SetPositionValue('top', '100px');
 }

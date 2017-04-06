@@ -32,6 +32,32 @@ function InitUI() {
 function InitLibraryView() {
 	$('.contentView').append('<div class="libraryView"></div>');
 	$('.libraryView').append('<h2>Library</h2>');
+	$('.libraryView').append('<div class="contentSection" id="libBtns"></div>');
+
+	for (var i = 0; i < lib[0].length; i++) {
+		$('#libBtns').append('<div class="libElement" id="' + lib[0][i].id + '"></div>');
+
+		$('#' + lib[0][i].id).css('background-image', 'url(img/Library/' + lib[0][i].img);
+
+		if (i%2!=0) {
+			$('#' + lib[0][i].id).addClass('lineBreak');
+		}
+
+		$('#' + lib[0][i].id).append('<h3>'+lib[0][i].label+'</h3>');
+
+		$('#' + lib[0][i].id).append('<div class="libElementClicked"></div>');
+
+		$('#' + lib[0][i].id).click(function(){
+			var libCategory = parseInt(this.id.charAt(1));
+			var libId = parseInt(this.id.charAt(3));
+
+			var myButton = new Button('MyButton');
+			var myButtonStyle = new Style('MyButtonStyle');
+			myButtonStyle.DefineGroup(lib[libCategory][libId].style);
+			myButtonStyle.Apply(myButton);
+			myButton.SetPosition(lib[libCategory][libId].dim);
+		})
+	}
 }
 
 function InitInstancesView() {

@@ -74,6 +74,11 @@ body {
 	margin-right: 20px;
 }
 
+/* ------------------- TEMPORARY DEACTIVATED --------------------- */
+.osStateBtn.instancesBtn {
+	opacity: 0.5;
+}
+
 .osStateBtn.active {
 	background: #737373;
 	box-shadow: 0 0 1px 0 rgba(0,0,0,0.10);
@@ -120,7 +125,7 @@ body {
 /* ----------------- LIBRARY VIEW ------------------ */
 
 .libraryView {
-	width: 323px;
+	width: 324px;
 	position: absolute;
 	z-index: 2;
 	left: 100%;
@@ -131,9 +136,60 @@ body {
 }
 
 .libraryView.active {
-	margin-left: -323px;
+	margin-left: -324px;
 	box-shadow: 0 0 4px 0 rgba(0,0,0,0.50);
 }
+
+.libraryView > .contentSection {
+	width: 100%;
+	padding: 0px 22px;
+}
+
+.contentSection > .libElement {
+	width: 130px;
+	height: 130px;
+	float: left;
+	margin-right: 20px;
+	margin-bottom: 40px;
+	background-color: #FFFFFF;
+	border: solid 1px #DBDCDC;
+	border-radius: 4px;
+	background-size: 100%;
+	position: relative;
+}
+
+.contentSection > .libElement > h3 {
+	top: 100%;
+	position: relative;
+	margin-top: 8px;
+}
+
+.contentSection > .libElement > .libElementClicked {
+	width: 100%;
+	height: 100%;
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	background: #000000;
+	border-radius: 4px;
+	opacity: 0;
+}
+
+.contentSection > .libElement:active > .libElementClicked {
+	opacity: 0.05;
+}
+
+.contentSection > .libElement.lineBreak {
+	margin-right: 0px;
+}
+
+
+
+
+
+
+
+/* ----------------- INSTANCES VIEW ------------------ */
 
 .instancesView {
 	width: 323px;
