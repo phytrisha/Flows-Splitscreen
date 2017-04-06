@@ -2,6 +2,16 @@ var elemCnt = 0;
 var styleCnt = 0;
 var artboardCnt = 0;
 
+var elemMoving = false;
+
+var elemMoved = false;
+var elemMovingId = '';
+var elemOffset = {
+	left: 0,
+	top: 0
+}
+var curArtboardOffset;
+
 $(document).ready(function() {
 	// Build Up Views
 	InitUI();
@@ -18,6 +28,12 @@ document.addEventListener('keydown', function(e){
 	}
 });
 
+document.addEventListener('keyup', function(e){
+	if (e.keyCode == 32) {
+		ResetCanvasMovement();
+	}
+})
+
 document.addEventListener('mousedown', function(e){
 	if (e.button == 0) {
 		InitClickedCanvas(e);
@@ -27,6 +43,9 @@ document.addEventListener('mousedown', function(e){
 document.addEventListener('mousemove', function(e){
 	if (canvasMoving) {
 		MoveCanvas(e);
+	} else if (elemMoving) {
+		$(elemMovingId).css('left', (e.clientX-curArtboardOffset.left-elemOffset.left) + 'px');
+		$(elemMovingId).css('top', (e.clientY-curArtboardOffset.top-elemOffset.top) + 'px');
 	}
 })
 

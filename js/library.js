@@ -11,9 +11,15 @@ var lib = [
 			dim: {
 				'left': '10px',
 				'top': '10px',
-				'width': '100px',
-				'height': '26px'
-			}
+				'width': '150px',
+				'height': '39px'
+			},
+			content: [
+				obj = {
+					'type':'Label',
+					'content':'Button Label'
+				}
+			]
 		},
 		TextButton = {
 			label: "Text",

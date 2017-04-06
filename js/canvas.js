@@ -1,4 +1,3 @@
-
 // append the canvas to DOM
 function InitCanvas() {
 	$('.rightView').append('<div class="canvas"></div>');

@@ -3,6 +3,7 @@ function UpdateUI() {
 	$('.rightView').css('height', window.innerHeight - 68 + 'px');
 	$('.libraryView').css('height', window.innerHeight - 68 + 'px');
 	$('.instancesView').css('height', window.innerHeight - 68 + 'px');
+	$('.editorUi').css('top', ((window.innerHeight - 68) - parseInt($('.editorUi').css('height'))) + 'px');
 }
 
 function InitUI() {
@@ -19,12 +20,16 @@ function InitUI() {
 	$('.topbar').append('<div class="osStateBtn instancesBtn"></div>');
 
 	$('.libraryBtn').append('<div class="osBtnIcon libraryIcon"></div>');
+	$('.libraryBtn').append('<h2>Library</h2>');
+
 	$('.instancesBtn').append('<div class="osBtnIcon instancesIcon"></div>');
+	$('.instancesBtn').append('<h2>Assets</h2>');
 
 	InitCanvas();
 	InitUiTopbar();
 	InitLibraryView();
 	InitInstancesView();
+	InitEditorUi();
 
 	UpdateUI();
 }
@@ -51,11 +56,25 @@ function InitLibraryView() {
 			var libCategory = parseInt(this.id.charAt(1));
 			var libId = parseInt(this.id.charAt(3));
 
-			var myButton = new Button('MyButton');
+			var myButton = new Button('New Instance ' + (data.elements.length+1));
 			var myButtonStyle = new Style('MyButtonStyle');
+
 			myButtonStyle.DefineGroup(lib[libCategory][libId].style);
 			myButtonStyle.Apply(myButton);
+
 			myButton.SetPosition(lib[libCategory][libId].dim);
+
+			for (var i = 0; i < lib[libCategory][libId].content.length; i++) {
+				switch (lib[libCategory][libId].content[i].type) {
+					case 'Label':
+						$(myButton.obj).append('<h3>' + lib[libCategory][libId].content[i].content + '</h3>');
+						break;
+					default:
+						break;
+				}
+			}
+
+			myButton.AppendToInstancesView();
 		})
 	}
 }
@@ -86,18 +105,33 @@ function InitUiTopbar() {
 	})
 }
 
-function TriggerViewState(view) {
-	if (!$(view).hasClass('active')) {
-		$(view).addClass('active');
+// StateMachine For View Triggering
+// Library And Instances View
+
+function TriggerLibraryView() {
+	if (!$('.libraryView').hasClass('active')) {
+		$('.libraryView').addClass('active');
+		if ($('.instancesView').hasClass('active')) {
+			$('.instancesView').addClass('active2');
+		}
 	} else {
-		$(view).removeClass('active');
+		$('.libraryView').removeClass('active');
+		if ($('.instancesView').hasClass('active2')) {
+			$('.instancesView').removeClass('active2');
+		}
 	}
 }
 
-function TriggerLibraryView() {
-	TriggerViewState('.libraryView');
-}
-
 function TriggerInstancesView() {
-	TriggerViewState('.instancesView');
+	if (!$('.instancesView').hasClass('active')) {
+		$('.instancesView').addClass('active');
+		if ($('.libraryView').hasClass('active')) {
+			$('.instancesView').addClass('active2');
+		}
+	} else {
+		$('.instancesView').removeClass('active');
+		if ($('.instancesView').hasClass('active2')) {
+			$('.instancesView').removeClass('active2');
+		}
+	}
 }

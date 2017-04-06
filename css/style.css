@@ -17,3 +17,16 @@
 	height: 667px;
 	/*margin: -333px 0px 0px -187px;*/
 }
+
+/* ------------ TEMPORARY ------------ */
+
+.elemButton > h3 {
+	color: #FFFFFF;
+	font-size: 14px;
+	top: 50%;
+	position: relative;
+	margin-top: -7px;
+	font-weight: 300;
+	text-transform: uppercase;
+	letter-spacing: 1.5px;
+}

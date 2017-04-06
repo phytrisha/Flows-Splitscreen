@@ -30,4 +30,5 @@ Style.prototype.Apply = function(obj) {
 	for(var name in this.attr) {
 		$(obj.obj).css(name, this.attr[name]);
 	}
+	obj.style = this.attr;
 }
