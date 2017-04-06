@@ -37,7 +37,7 @@ body {
     top: 68px;
 }
 
-.leftView {
+/*.leftView {
 	background-color: #EFEFEF;
 	width: 50%;
 	height: 100%;
@@ -46,14 +46,120 @@ body {
 	top: 0px;
 	border-right: 1px solid #CCCCCC;
 	z-index: 999;
-}
+}*/
 
 .rightView {
 	background-color: #EFEFEF;
-    width: 50%;
+    width: 100%;
     height: 100%;
     position: absolute;
-    left: 50%;
+    left: 0px;
     top: 0px;
     z-index: 1;
 }
+
+/* ----------------- TOPBAR BUTTONS ------------------ */
+
+.osStateBtn {
+	width: 46px;
+	height: 26px;
+	background: #FCFBFC;
+	box-shadow: 0 1px 1px 0 rgba(0,0,0,0.20), inset 0 2px 0 0 #FFFFFF;
+	border-radius: 4px;
+	display: inline-block;
+	float: right;
+}
+
+.osStateBtn.instancesBtn, .osStateBtn.libraryBtn {
+	margin-right: 20px;
+}
+
+.osStateBtn.active {
+	background: #737373;
+	box-shadow: 0 0 1px 0 rgba(0,0,0,0.10);
+}
+
+.osStateBtn:active {
+	background: #595959;
+	box-shadow: 0 0 1px 0 rgba(0,0,0,0.10);
+}
+
+.osStateBtn.instancesBtn:active > .osBtnIcon.instancesIcon, 
+.osStateBtn.instancesBtn > .osBtnIcon.instancesIcon.active {
+	background-image: url(../img/Icons/icn_instances_active.svg);
+}
+.osStateBtn.libraryBtn:active > .osBtnIcon.libraryIcon, 
+.osStateBtn.libraryBtn > .osBtnIcon.libraryIcon.active {
+	background-image: url(../img/Icons/icn_library_active.svg);
+}
+
+.osStateBtn > .osBtnIcon {
+	margin: auto;
+	position: relative;
+	top: 50%;
+	background-size: 100%;
+}
+
+.osStateBtn.instancesBtn > .osBtnIcon.instancesIcon {
+	width: 14px;
+	height: 12px;
+	margin-top: -6px;
+	background-image: url(../img/Icons/icn_instances_inactive.svg);
+}
+
+.osStateBtn.libraryBtn > .osBtnIcon.libraryIcon {
+	width: 12px;
+	height: 12px;
+	margin-top: -6px;
+	background-image: url(../img/Icons/icn_library_inactive.svg);
+}
+
+
+
+
+/* ----------------- LIBRARY VIEW ------------------ */
+
+.libraryView {
+	width: 323px;
+	position: absolute;
+	z-index: 2;
+	left: 100%;
+	background: #FFFFFF;
+	margin-left: 0px;
+	-webkit-transition: margin-left 0.25s;
+	top: 0px;
+}
+
+.libraryView.active {
+	margin-left: -323px;
+	box-shadow: 0 0 4px 0 rgba(0,0,0,0.50);
+}
+
+.instancesView {
+	width: 323px;
+	position: absolute;
+	z-index: 2;
+	left: 100%;
+	background: #FFFFFF;
+	margin-left: 0px;
+	-webkit-transition: margin-left 0.25s;
+	top: 0px;
+}
+
+.instancesView.active {
+	margin-left: -323px;
+	box-shadow: 0 0 4px 0 rgba(0,0,0,0.50);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -4,3 +4,12 @@ p {
 	font-weight: 500;
 	color: #7F7F7F;
 }
+
+h2 {
+	font-family: 'SF UI Display';
+	font-size: 14px;
+	font-weight: 500;
+	color: #444444;
+	text-align: center;
+	margin-top: 18px;
+}

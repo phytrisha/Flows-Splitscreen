@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="13px" viewBox="0 0 14 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43 (38999) - http://www.bohemiancoding.com/sketch -->
+    <title>Shape</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="library-copy" transform="translate(-1085.000000, -28.000000)" fill-rule="nonzero" fill="#585858">
+            <g id="Toolbar-Button" transform="translate(1069.000000, 21.000000)">
+                <path d="M26.08,7 C24.82,7 23.7,7.63 23,8.61 C22.3,7.63 21.18,7 19.92,7 C17.75,7 16,8.75 16,10.92 C16,14 23,19.6 23,19.6 C23,19.6 30,14 30,10.92 C30,8.75 28.25,7 26.08,7 Z" id="Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>

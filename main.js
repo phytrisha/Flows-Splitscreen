@@ -9,8 +9,6 @@ $(document).ready(function() {
 	// Template Functions show how Elements are created
 	// ------------TEMPORARY!!!------------
 	TemplateArtboards();
-	TemplateTopbar();
-	TemplateButton();
 	// ------------TEMPORARY!!!------------
 })
 
