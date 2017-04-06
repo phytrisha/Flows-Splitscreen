@@ -4,35 +4,48 @@ function InitCanvas() {
 	$('.rightView').append('<div class="canvas"></div>');
 }
 
-// var movingCanvas = false;
-// var movingCanvasReady = false;
+var canvasMoving = false;
+var canvasReadyForMoving = false;
 
-// // check for key interaction
-// $(document).ready(function() {
-// 	window.setTimeout(function() {
-// 		$('.rightView').on('mouseover', function() {
-// 			movingCanvasReady = true;
-// 		})
+var mouseStart = {
+	top: 0,
+	left: 0
+};
 
-// 		$('.rightView').on('mouseout', function() {
-// 			movingCanvasReady = false;
-// 		})
-// 	}, 10)
+var canvasStart = {
+	top: 0,
+	left: 0
+}
 
-// 	$('body').keypress(function(e) {
+function ResetCanvasMovement() {
+	canvasMoving = false;
+	canvasReadyForMoving = false;
+}
 
-// 		if (e.keyCode == 65 && movingCanvasReady) {
-// 			movingCanvas = true;
-// 			MoveCanvas(e);
-// 		}
-// 		e.stopPropagation();
-// 		e.preventDefault();
-// 		return false;
+function InitReadyCanvas() {
+	canvasReadyForMoving = true;
+}
 
-// 	});
-// })
+function StoreInitMousePos(e) {
+	mouseStart.top = e.clientY;
+	mouseStart.left = e.clientX;
 
-// function MoveCanvas(e) {
-// 	console.log('Move the Canvas');
-// 	$('.rightView').css('cursor', 'move');
-// }
+	canvasStart.top = parseInt($('.canvas').css('top'));
+	canvasStart.left = parseInt($('.canvas').css('left'));
+}
+
+function InitClickedCanvas(e) {
+	if (canvasReadyForMoving) {
+		StoreInitMousePos(e);
+		canvasMoving = true;
+	}
+}
+
+function MoveCanvas(e) {
+	var canvasMousePos = {
+		top: e.clientY - mouseStart.top,
+		left: e.clientX - mouseStart.left
+	}
+	$('.canvas').css('left', canvasStart.left + canvasMousePos.left + 'px');
+	$('.canvas').css('top', canvasStart.top + canvasMousePos.top + 'px');
+}

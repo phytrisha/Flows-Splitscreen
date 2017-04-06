@@ -1,6 +1,6 @@
 function UpdateUI() {
-	$('.leftView').css('height', window.innerHeight - 40 + 'px');
-	$('.rightView').css('height', window.innerHeight - 40 + 'px');
+	$('.leftView').css('height', window.innerHeight - 68 + 'px');
+	$('.rightView').css('height', window.innerHeight - 68 + 'px');
 }
 
 function InitUI() {

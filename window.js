@@ -8,6 +8,9 @@ const path = require('path')
 const url = require('url')
 const Menu = electron.Menu
 
+const dialog = electron.dialog
+const globalShortcut = electron.globalShortcut
+
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
@@ -18,7 +21,8 @@ function createWindow () {
     width: 1200, 
     height: 800, 
     frame: false, 
-    titleBarStyle: 'hidden-inset'
+    titleBarStyle: 'hidden',
+    disableAutoHideCursor: true
   })
 
   // and load the index.html of the app.
@@ -27,6 +31,18 @@ function createWindow () {
     protocol: 'file:',
     slashes: true
   }))
+
+  // mainWindow.webContents.sendInputEvent({keyCode: 'A', type: 'keyDown'}); 
+
+  /*globalShortcut.register('space', function () {
+    dialog.showMessageBox({
+      type: 'info',
+      message: 'Success!',
+      detail: 'You pressed the registered global shortcut keybinding.',
+      buttons: ['OK']
+    })
+    mainWindow.webContents.executeJavaScript("MoveCanvas()");
+  })*/
 
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()
@@ -154,6 +170,11 @@ app.on('activate', function () {
   if (mainWindow === null) {
     createWindow()
   }
+})
+
+app.on('will-quit', () => {
+  // Unregister all shortcuts.
+  globalShortcut.unregisterAll()
 })
 
 // In this file you can include the rest of your app's specific main process
