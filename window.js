@@ -14,6 +14,7 @@ const globalShortcut = electron.globalShortcut
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
+let contents
 
 function createWindow () {
   // Create the browser window.
@@ -30,9 +31,11 @@ function createWindow () {
     pathname: path.join(__dirname, 'index.html'),
     protocol: 'file:',
     slashes: true
-  }))
+  }))  
 
-  // mainWindow.webContents.sendInputEvent({keyCode: 'A', type: 'keyDown'}); 
+  globalShortcut.register('CommandOrControl+U', function () {
+    mainWindow.webContents.undo()
+  })
 
   /*globalShortcut.register('space', function () {
     dialog.showMessageBox({
@@ -55,8 +58,8 @@ function createWindow () {
     mainWindow = null
   })
 
-  const menu = Menu.buildFromTemplate(template)
-  Menu.setApplicationMenu(menu)  
+  // const menu = Menu.buildFromTemplate(template)
+  // Menu.setApplicationMenu(menu)  
 
 }
 
@@ -64,94 +67,6 @@ function createWindow () {
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
 app.on('ready', createWindow)
-
-
-const template = [
-  {
-    label: 'Edit',
-    submenu: [
-      {
-        role: 'undo'
-      },
-      {
-        role: 'redo'
-      },
-      {
-        type: 'separator'
-      },
-      {
-        role: 'cut'
-      },
-      {
-        role: 'copy'
-      },
-      {
-        role: 'paste'
-      },
-      {
-        role: 'pasteandmatchstyle'
-      },
-      {
-        role: 'delete'
-      },
-      {
-        role: 'selectall'
-      }
-    ]
-  },
-  {
-    label: 'View',
-    submenu: [
-      {
-        role: 'reload'
-      },
-      {
-        role: 'forcereload'
-      },
-      {
-        role: 'toggledevtools'
-      },
-      {
-        type: 'separator'
-      },
-      {
-        role: 'resetzoom'
-      },
-      {
-        role: 'zoomin'
-      },
-      {
-        role: 'zoomout'
-      },
-      {
-        type: 'separator'
-      },
-      {
-        role: 'togglefullscreen'
-      }
-    ]
-  },
-  {
-    role: 'window',
-    submenu: [
-      {
-        role: 'minimize'
-      },
-      {
-        role: 'close'
-      }
-    ]
-  },
-  {
-    role: 'help',
-    submenu: [
-      {
-        label: 'Learn More',
-        click () { require('electron').shell.openExternal('http://electron.atom.io') }
-      }
-    ]
-  }
-]
 
 
 

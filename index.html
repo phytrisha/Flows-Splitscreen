@@ -2,30 +2,83 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/window.css">
-    <link rel="stylesheet" href="css/typo.css">
-    <link rel="stylesheet" href="css/elem.css">
 
+    <!-- Reset -->
+    <link rel="stylesheet" href="css/reset.css">
+    
+    <!-- User Interface Styling -->
+    <link rel="stylesheet" href="css/ui/ui.css">
+    <link rel="stylesheet" href="css/ui/typo.css">
+    <link rel="stylesheet" href="css/ui/canvas.css">
+
+    <!-- Elements Styling -->
+    <link rel="stylesheet" href="css/elements/elements.css">
+    <link rel="stylesheet" href="css/elements/artboards.css">
+
+    <!-- Libraries -->
     <script src="lib/electronInit.js"></script>
     <script src="lib/jquery-3.1.1.min.js"></script>
-    <script src="js/colors.js"></script>
-    <script src="js/screen.js"></script>
-    <script src="js/elements.js"></script>
-    <script src="js/styles.js"></script>
-    <script src="js/topbar.js"></script>
-    <script src="js/button.js"></script>
-    <script src="js/artboard.js"></script>
-    <script src="js/canvas.js"></script>
-    <script src="js/move.js"></script>
-    <script src="js/editor.js"></script>
-    <script src="js/presets.js"></script>
-    <script src="js/library.js"></script>
+    
+    <!-- Currently Open File -->
     <script src="data/file.js"></script>
+    
+    <!-- User Interface of Flows -->
+    <script src="js/ui/ui.js"></script>
+    <script src="js/ui/canvas.js"></script>
+    <script src="js/ui/events.js"></script>
+    <script src="js/ui/editor.js"></script>
+
+    <!-- Presets and Libraries -->
+    <script src="js/presets/posPresets.js"></script>
+    <script src="js/presets/library.js"></script>
+
+    <!-- User Creatable Elements -->
+    <script src="js/elements/instance.js"></script>
+    <script src="js/elements/button.js"></script>
+    
+    <!-- TEMPLATE FOR ELEMENTS -->
     <script src="js/template.js"></script>
+
+    <!-- Main Application Controller -->
     <script src="main.js"></script>
   </head>
   <body>
+
+    <!-- Topbar -->
+    <div class="topbar">
+        <div class="appLabel">
+            flows
+        </div>
+        <div class="osStateBtn libraryBtn">
+            <div class="osBtnIcon libraryIcon"></div>
+            <h2>Library</h2>
+        </div>
+        <div class="osStateBtn instancesBtn">
+            <div class="osBtnIcon instancesIcon"></div>
+            <h2>Assets</h2>
+        </div>
+    </div>
+  
+    <!-- Content View -->
+    <div class="contentView">
+        <div class="canvas">
+            <div class="artboard iPhone7 selected">
+                
+            </div>
+        </div>
+        <div class="libraryView active">
+            <h1>Library</h1>
+            <div class="contentSection">
+                <h1>Buttons</h1>
+            </div>
+        </div>
+        <div class="instancesView active active2">
+            <h1>Assets</h1>
+        </div>
+        <div class="editorUi active">
+            <input type="range" min="0" max="100" value="0" class="editorSlider" id="border-radius"/>
+        </div>
+    </div>
+
   </body>
 </html>

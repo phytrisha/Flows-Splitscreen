@@ -1,0 +1,266 @@
+* {
+	user-select: none;
+	cursor: default;
+}
+
+body {
+	background-color: #eeeeee;
+}
+
+/* Native Topbar */
+.topbar {
+	width: 100%;
+	background: -webkit-linear-gradient(rgb(233,233,233), rgb(215,215,215));
+	border-bottom: solid 1px rgb(158,158,158);
+	height: 68px;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	z-index: 999;
+	box-shadow: inset 0px 1px 0px rgb(245,245,245);
+	-webkit-app-region: drag;
+}
+
+.contentView {
+	width: 100%;
+    position: fixed;
+    left: 0px;
+    top: 68px;
+}
+
+/* ----------------- TOPBAR BUTTONS ------------------ */
+
+.osStateBtn {
+	width: 46px;
+	height: 26px;
+	background: #FCFBFC;
+	box-shadow: 0 1px 1px 0 rgba(0,0,0,0.20), inset 0 2px 0 0 #FFFFFF;
+	border-radius: 4px;
+	display: inline-block;
+	float: right;
+	margin-top: -6px;
+}
+
+.osStateBtn.instancesBtn, .osStateBtn.libraryBtn {
+	margin-right: 20px;
+}
+
+.osStateBtn.active {
+	background: #737373;
+	box-shadow: 0 0 1px 0 rgba(0,0,0,0.10);
+}
+
+.osStateBtn:active {
+	background: #595959;
+	box-shadow: 0 0 1px 0 rgba(0,0,0,0.10);
+}
+
+.osStateBtn.instancesBtn:active > .osBtnIcon.instancesIcon, 
+.osStateBtn.instancesBtn > .osBtnIcon.instancesIcon.active {
+	background-image: url(../../img/Icons/icn_instances_active.svg);
+}
+.osStateBtn.libraryBtn:active > .osBtnIcon.libraryIcon, 
+.osStateBtn.libraryBtn > .osBtnIcon.libraryIcon.active {
+	background-image: url(../../img/Icons/icn_library_active.svg);
+}
+
+.osStateBtn > .osBtnIcon {
+	margin: auto;
+	position: relative;
+	top: 50%;
+	background-size: 100%;
+}
+
+.osStateBtn.instancesBtn > .osBtnIcon.instancesIcon {
+	width: 14px;
+	height: 12px;
+	margin-top: -6px;
+	background-image: url(../../img/Icons/icn_instances_inactive.svg);
+}
+
+.osStateBtn.libraryBtn > .osBtnIcon.libraryIcon {
+	width: 12px;
+	height: 12px;
+	margin-top: -6px;
+	background-image: url(../../img/Icons/icn_library_inactive.svg);
+}
+
+/* ----------------- LIBRARY VIEW ------------------ */
+
+.libraryView {
+	width: 324px;
+	position: absolute;
+	z-index: 2;
+	left: 100%;
+	height: 100%;
+	background: #FFFFFF;
+	margin-left: 0px;
+	top: 0px;
+}
+
+.libraryView.active {
+	margin-left: -324px;
+}
+
+.libraryView.active2 {
+	margin-left: -648px;
+}
+
+.libraryView > .contentSection {
+	width: 100%;
+	padding: 0px 22px;
+}
+
+.contentSection > .libElement {
+	width: 130px;
+	height: 130px;
+	float: left;
+	margin-right: 20px;
+	margin-bottom: 40px;
+	background-color: #FFFFFF;
+	border: solid 1px #DBDCDC;
+	border-radius: 4px;
+	background-size: 100%;
+	position: relative;
+}
+
+.contentSection > .libElement > h3 {
+	top: 100%;
+	position: relative;
+	margin-top: 14px;
+}
+
+.contentSection > .libElement > .libElementClicked {
+	width: 100%;
+	height: 100%;
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	background: #000000;
+	border-radius: 4px;
+	opacity: 0;
+}
+
+.contentSection > .libElement:active > .libElementClicked {
+	opacity: 0.05;
+}
+
+.contentSection > .libElement.lineBreak {
+	margin-right: 0px;
+}
+
+
+
+/* ----------------- INSTANCES VIEW ------------------ */
+
+.instancesView {
+	width: 323px;
+	position: absolute;
+	z-index: 2;
+	left: 100%;
+	height: 100%;
+	background: #FFFFFF;
+	margin-left: 0px;
+	top: 0px;
+}
+
+.instancesView.active {
+	margin-left: -323px;
+}
+
+.instancesView.active2 {
+	margin-left: -648px;
+}
+
+.instancedElementCell {
+	width: 100%;
+	height: 48px;
+	background-color: #FFFFFF;
+	border-bottom: 1px solid #DDDDDD;
+}
+
+.instancedElementTitle {
+	position: relative;
+	top: 18px;
+	left: 96px;
+}
+
+.instancedElementTitle > h3 {
+	text-align: left;
+}
+
+.instancedElementThumb {
+	margin-top: 8px;
+	position: absolute;
+	margin-left: 8px;
+}
+
+.instancedElementAdd {
+	width: 12px;
+	height: 12px;
+	float: right;
+	margin-right: 12px;
+	position: relative;
+	top: -12px;
+	margin-top: 18px;
+	background-image: url(../../img/Icons/icn_add.svg);
+	background-size: 100%;
+}
+
+/* --------------- EDITOR UI ------------- */
+
+.editorUi {
+	width: 220px;
+	height: 320px;
+	background-color: #FFFFFF;
+	position: absolute;
+	z-index: 999;
+	border-radius: 4px;
+	box-shadow: 0 2px 7px 0 rgba(0,0,0,0.20);
+	margin: -50px 0px 0px 50px;
+	display: none;
+}
+
+.editorUi.active {
+	display: initial;
+}
+
+.editorSlider {
+	width: 200px;
+	position: relative;
+	left: 10px;
+	top: 20px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	height: 18px;
+	width: 18px;
+	border-radius: 9px;
+	background: #ffffff;
+	margin-top: -7px;  /*You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+	/*box-shadow: 0 2px 7px 0 rgba(0,0,0,0.50);*/
+	box-shadow: 0 0 0 1px rgba(0,0,0,0.10), 0 1px 2px 0 rgba(0,0,0,0.4);
+}
+
+input[type=range]::-webkit-slider-thumb:active {
+	background: #eeeeee;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+	width: 100%;
+	height: 4px;
+	background: rgba(0,0,0,0.20);
+	border-radius: 2px;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: rgba(0,0,0,0.20);
+}
+
+
+
+
+
+
+

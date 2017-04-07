@@ -1,0 +1,7 @@
+.element {
+	position: absolute;
+}
+
+.element.selected {
+	outline: 2px solid red;
+}

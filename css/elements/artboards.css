@@ -1,0 +1,12 @@
+.artboard {
+	position: absolute;
+	background-color: #F3F3F3;
+	border: 1px solid #CCCCCC;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    overflow: hidden;
+}
+
+.artboard.iPhone7 {
+	width: 375px;
+	height: 667px;
+}
